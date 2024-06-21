@@ -1,0 +1,116 @@
+<x-guest-layout>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  
+    <section class="custom-gradientReg w-full h-full mx-auto text-center">
+        <!-- Change the colour #f8fafc to match the previous section colour (wave effect)-->
+    <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
+            <g class="wave" fill="#f8fafc">
+              <path
+                d="M1440,84 C1383.555,64.3 1342.555,51.3 1317,45 C1259.5,30.824 1206.707,25.526 1169,22 C1129.711,18.326 1044.426,18.475 980,22 C954.25,23.409 922.25,26.742 884,32 C845.122,37.787 818.455,42.121 804,45 C776.833,50.41 728.136,61.77 713,65 C660.023,76.309 621.544,87.729 584,94 C517.525,105.104 484.525,106.438 429,108 C379.49,106.484 342.823,104.484 319,102 C278.571,97.783 231.737,88.736 205,84 C154.629,75.076 86.296,57.743 0,32 L0,0 L1440,0 L1440,84 Z"
+              ></path>
+            </g>
+            <g transform="translate(1.000000, 15.000000)" fill="#FFFFFF">
+              <g transform="translate(719.500000, 68.500000) rotate(-180.000000) translate(-719.500000, -68.500000) ">
+                <path d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496" opacity="0.100000001"></path>
+                <path
+                  d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                  opacity="0.100000001"
+                ></path>
+                <path d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z" opacity="0.200000003"></path>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+      
+        <div class="sm:flex sm:flex-row shadow-xl">
+            <div class="ml-12">
+                <img class="w-full min-h-screen md:w-4/5 z-50" src="{{ asset('images/Sign up-bro.svg') }}" >
+            </div>
+            <div class="w-full">
+                <x-auth-card>
+                    <x-slot name="logo">
+                        <a href="/">
+                            <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                        </a>
+                    </x-slot>
+  
+                    <!-- Validation Errors -->
+                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+  
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-7">
+                            <h3 class="font-semibold text-2xl text-gray-800">Register</h3>
+                            <p class="text-gray-400">Do you have an account? <a href="{{ route('login') }}" class="text-sm text-purple-700 hover:text-purple-700">Sign In</a></p>
+                        </div>
+                        <!-- Name -->
+                        <div>
+                            <x-label for="name" :value="__('Name')" />
+                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                        </div>
+  
+                        <!-- Email Address -->
+                        <div class="mt-4">
+                            <x-label for="email" :value="__('Email')" />
+                            <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                        </div>
+  
+                        <!-- Password -->
+                        <div class="mt-4">
+                            <x-label for="password" :value="__('Password')" />
+                            <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                        </div>
+  
+                        <!-- Confirm Password -->
+                        <div class="mt-4">
+                            <x-label for="password_confirmation" :value="__('Confirm Password')" />
+                            <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
+                        </div>
+  
+                        <!-- Profile Picture -->
+                        <div class="mt-4">
+                            <x-label for="profile_picture" :value="__('Profile Picture')" />
+                            <input id="profile_picture" type="file" class="block mt-1 w-full" name="profile_picture">
+                            @if ($errors->has('profile_picture'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('profile_picture') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+  
+                        <!-- Role Selection -->
+                        <div class="mt-4">
+                            <x-label for="role" :value="__('Register as')" />
+                            <div class="flex justify-around">
+                                <label>
+                                    <input type="radio" name="role" value="admin" required>
+                                    <span>{{ __('Admin') }}</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="role" value="instructor" required>
+                                    <span>{{ __('Instructor') }}</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="role" value="learner" required>
+                                    <span>{{ __('Learner') }}</span>
+                                </label>
+                            </div>
+                        </div>
+  
+                        <div class="flex items-center justify-end mt-4">
+                            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                                {{ __('Already registered?') }}
+                            </a>
+                            <x-button class="ml-4">
+                                {{ __('Register') }}
+                            </x-button>
+                        </div>
+                    </form>
+                </x-auth-card>
+            </div>
+        </div>
+    </section>
+  </x-guest-layout>
