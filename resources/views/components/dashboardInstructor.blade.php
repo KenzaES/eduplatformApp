@@ -14,8 +14,10 @@
           <div class="grow">
             <h1 class="mb-1 text-xl font-bold">Dashboard</h1>
             <h2 class="text-sm font-medium text-zinc-500">
-              Welcome, <strong>Admin</strong> {{ Auth::user()->name }} let's connect 
-              <strong>Heroes</strong> with <strong>learner</strong> .
+              Welcome, <strong>instructor</strong> {{ Auth::user()->name }} let's make a
+              <strong>great</strong> Courses
+              
+              
             </h2>
           </div>
           <div
@@ -266,7 +268,7 @@
               <div>
                 <h2 class="mb-0.5 font-semibold">All Instructors</h2>
                 <h3 class="text-sm font-medium text-zinc-600">
-                  You have nbr of active instructors.
+                  You have 3 active instructors.
                 </h3>
               </div>
               <div>
@@ -305,17 +307,17 @@
                       <th
                         class="min-w-[180px] px-3 py-2 text-start text-sm font-semibold uppercase tracking-wider text-zinc-700"
                       >
-                        email
-                      </th>
-                      <th
-                        class="min-w-[180px] px-3 py-2 text-start text-sm font-semibold uppercase tracking-wider text-zinc-700"
-                      >
-                        Speciality
+                        Status
                       </th>
                       <th
                         class="min-w-[180px] px-3 py-2 text-start text-sm font-semibold uppercase tracking-wider text-zinc-700"
                       >
                         Courses_Count
+                      </th>
+                      <th
+                        class="min-w-[180px] px-3 py-2 text-start text-sm font-semibold uppercase tracking-wider text-zinc-700"
+                      >
+                        category
                       </th>
                       <th
                         class="px-3 py-2 text-start text-sm font-semibold uppercase tracking-wider text-zinc-700"
@@ -339,7 +341,7 @@
                           href="javascript:void(0)"
                           class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
                         >
-                          lily
+                          projects-main
                         </a>
                       </td>
                       <td class="p-3 text-start">
@@ -359,7 +361,7 @@
                               clip-rule="evenodd"
                             />
                           </svg>
-                          <span>lily@mail.com</span>
+                          <span>Running</span>
                         </div>
                       </td>
                       <td class="p-3 font-medium text-zinc-600">
@@ -367,14 +369,14 @@
                           href="javascript:void(0)"
                           class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
                         >
-                          Math
+                          Pro 12GB
                         </a>
                       </td>
-                      <td class="p-3 text-start">nbrCourses</td>
+                      <td class="p-3 text-start">101.33.115.78</td>
                       <td
                         class="whitespace-nowrap p-3 font-medium text-zinc-600"
                       >
-                        nbrStudent
+                        New York (USA)
                       </td>
                       <td
                         class="whitespace-nowrap p-3 text-end font-medium"
@@ -396,14 +398,13 @@
                               clip-rule="evenodd"
                             />
                           </svg>
-                          <span>Update</span>
+                          <span>Restart</span>
                         </a>
                         <a
                           href="javascript:void(0)"
                           class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
                         >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;" class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm10.618-3L15 2H9L7.382 4H3v2h18V4z"></path></svg>
-                          {{-- <svg
+                          <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 16 16"
                             fill="currentColor"
@@ -415,8 +416,8 @@
                               d="M6.455 1.45A.5.5 0 0 1 6.952 1h2.096a.5.5 0 0 1 .497.45l.186 1.858a4.996 4.996 0 0 1 1.466.848l1.703-.769a.5.5 0 0 1 .639.206l1.047 1.814a.5.5 0 0 1-.14.656l-1.517 1.09a5.026 5.026 0 0 1 0 1.694l1.516 1.09a.5.5 0 0 1 .141.656l-1.047 1.814a.5.5 0 0 1-.639.206l-1.703-.768c-.433.36-.928.649-1.466.847l-.186 1.858a.5.5 0 0 1-.497.45H6.952a.5.5 0 0 1-.497-.45l-.186-1.858a4.993 4.993 0 0 1-1.466-.848l-1.703.769a.5.5 0 0 1-.639-.206l-1.047-1.814a.5.5 0 0 1 .14-.656l1.517-1.09a5.033 5.033 0 0 1 0-1.694l-1.516-1.09a.5.5 0 0 1-.141-.656L2.46 3.593a.5.5 0 0 1 .639-.206l1.703.769c.433-.36.928-.65 1.466-.848l.186-1.858Zm-.177 7.567-.022-.037a2 2 0 0 1 3.466-1.997l.022.037a2 2 0 0 1-3.466 1.997Z"
                               clip-rule="evenodd"
                             />
-                          </svg> --}}
-                          <span>Delete</span>
+                          </svg>
+                          <span>Settings</span>
                         </a>
                       </td>
                     </tr>
@@ -532,25 +533,16 @@
                           <span>Active</span>
                         </div>
                       </td>
-                      
-                        {{-- <label class="inline-flex items-center">
+                      <td class="p-3 font-medium text-zinc-600">
+                        <label class="inline-flex items-center">
                           <input
                             type="checkbox"
                             class="size-4 rounded border border-zinc-200 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-500/50 dark:border-zinc-600 dark:bg-zinc-800 dark:ring-offset-zinc-900 dark:checked:border-transparent dark:checked:bg-blue-500 dark:focus:border-blue-500"
                             checked
                           />
                           <span class="ml-2">Enable</span>
-                        </label> --}}
-                        <td class="">
-                          <div class="relative block h-4.5 w-full rounded bg-meta-9 dark:bg-meta-4">
-                            <div
-                              class="absolute left-0 top-0 flex h-full w-[35%] items-center justify-center rounded bg-primary text-xs font-medium text-white"
-                            >
-                              35%
-                            </div>
-                          </div>
-                          </td>
-                      
+                        </label>
+                      </td>
                       <td class="p-3 text-start text-zinc-600">
                         in 2 years
                       </td>
@@ -646,7 +638,583 @@
                         </a>
                       </td>
                     </tr>
-                    
+                    <tr class="border-b border-zinc-100 hover:bg-zinc-50">
+                      <td
+                        class="p-3 text-start font-semibold text-zinc-600"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
+                        >
+                          example3.com
+                        </a>
+                      </td>
+                      <td class="p-3 text-start">
+                        <div
+                          class="inline-flex items-center gap-1.5 font-medium"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-mini hi-check-circle inline-block size-5 text-emerald-500"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Active</span>
+                        </div>
+                      </td>
+                      <td class="p-3 font-medium text-zinc-600">
+                        <label class="inline-flex items-center">
+                          <input
+                            type="checkbox"
+                            class="size-4 rounded border border-zinc-200 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-500/50 dark:border-zinc-600 dark:bg-zinc-800 dark:ring-offset-zinc-900 dark:checked:border-transparent dark:checked:bg-blue-500 dark:focus:border-blue-500"
+                            checked
+                          />
+                          <span class="ml-2">Enable</span>
+                        </label>
+                      </td>
+                      <td class="p-3 text-start text-zinc-600">
+                        in 5 years
+                      </td>
+                      <td
+                        class="whitespace-nowrap p-3 text-end font-medium"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6.455 1.45A.5.5 0 0 1 6.952 1h2.096a.5.5 0 0 1 .497.45l.186 1.858a4.996 4.996 0 0 1 1.466.848l1.703-.769a.5.5 0 0 1 .639.206l1.047 1.814a.5.5 0 0 1-.14.656l-1.517 1.09a5.026 5.026 0 0 1 0 1.694l1.516 1.09a.5.5 0 0 1 .141.656l-1.047 1.814a.5.5 0 0 1-.639.206l-1.703-.768c-.433.36-.928.649-1.466.847l-.186 1.858a.5.5 0 0 1-.497.45H6.952a.5.5 0 0 1-.497-.45l-.186-1.858a4.993 4.993 0 0 1-1.466-.848l-1.703.769a.5.5 0 0 1-.639-.206l-1.047-1.814a.5.5 0 0 1 .14-.656l1.517-1.09a5.033 5.033 0 0 1 0-1.694l-1.516-1.09a.5.5 0 0 1-.141-.656L2.46 3.593a.5.5 0 0 1 .639-.206l1.703.769c.433-.36.928-.65 1.466-.848l.186-1.858Zm-.177 7.567-.022-.037a2 2 0 0 1 3.466-1.997l.022.037a2 2 0 0 1-3.466 1.997Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Manage</span>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-zinc-100 hover:bg-zinc-50">
+                      <td
+                        class="p-3 text-start font-semibold text-zinc-600"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
+                        >
+                          example4.com
+                        </a>
+                      </td>
+                      <td class="p-3 text-start">
+                        <div
+                          class="inline-flex items-center gap-1.5 font-medium"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-mini hi-check-circle inline-block size-5 text-emerald-500"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Active</span>
+                        </div>
+                      </td>
+                      <td class="p-3 font-medium text-zinc-600">
+                        <label class="inline-flex items-center">
+                          <input
+                            type="checkbox"
+                            class="size-4 rounded border border-zinc-200 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-500/50 dark:border-zinc-600 dark:bg-zinc-800 dark:ring-offset-zinc-900 dark:checked:border-transparent dark:checked:bg-blue-500 dark:focus:border-blue-500"
+                            checked
+                          />
+                          <span class="ml-2">Enable</span>
+                        </label>
+                      </td>
+                      <td class="p-3 text-start text-zinc-600">
+                        in 5 years
+                      </td>
+                      <td
+                        class="whitespace-nowrap p-3 text-end font-medium"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6.455 1.45A.5.5 0 0 1 6.952 1h2.096a.5.5 0 0 1 .497.45l.186 1.858a4.996 4.996 0 0 1 1.466.848l1.703-.769a.5.5 0 0 1 .639.206l1.047 1.814a.5.5 0 0 1-.14.656l-1.517 1.09a5.026 5.026 0 0 1 0 1.694l1.516 1.09a.5.5 0 0 1 .141.656l-1.047 1.814a.5.5 0 0 1-.639.206l-1.703-.768c-.433.36-.928.649-1.466.847l-.186 1.858a.5.5 0 0 1-.497.45H6.952a.5.5 0 0 1-.497-.45l-.186-1.858a4.993 4.993 0 0 1-1.466-.848l-1.703.769a.5.5 0 0 1-.639-.206l-1.047-1.814a.5.5 0 0 1 .14-.656l1.517-1.09a5.033 5.033 0 0 1 0-1.694l-1.516-1.09a.5.5 0 0 1-.141-.656L2.46 3.593a.5.5 0 0 1 .639-.206l1.703.769c.433-.36.928-.65 1.466-.848l.186-1.858Zm-.177 7.567-.022-.037a2 2 0 0 1 3.466-1.997l.022.037a2 2 0 0 1-3.466 1.997Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Manage</span>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-zinc-100 hover:bg-zinc-50">
+                      <td
+                        class="p-3 text-start font-semibold text-zinc-600"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
+                        >
+                          example5.com
+                        </a>
+                      </td>
+                      <td class="p-3 text-start">
+                        <div
+                          class="inline-flex items-center gap-1.5 font-medium"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-mini hi-check-circle inline-block size-5 text-emerald-500"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Active</span>
+                        </div>
+                      </td>
+                      <td class="p-3 font-medium text-zinc-600">
+                        <label class="inline-flex items-center">
+                          <input
+                            type="checkbox"
+                            class="size-4 rounded border border-zinc-200 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-500/50 dark:border-zinc-600 dark:bg-zinc-800 dark:ring-offset-zinc-900 dark:checked:border-transparent dark:checked:bg-blue-500 dark:focus:border-blue-500"
+                            checked
+                          />
+                          <span class="ml-2">Enable</span>
+                        </label>
+                      </td>
+                      <td class="p-3 text-start text-zinc-600">
+                        <div
+                          class="inline-flex items-center gap-1.5 font-medium text-orange-500"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-micro hi-exclamation-triangle inline-block size-4"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6.701 2.25c.577-1 2.02-1 2.598 0l5.196 9a1.5 1.5 0 0 1-1.299 2.25H2.804a1.5 1.5 0 0 1-1.3-2.25l5.197-9ZM8 4a.75.75 0 0 1 .75.75v3a.75.75 0 1 1-1.5 0v-3A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>in 1 week!</span>
+                        </div>
+                      </td>
+                      <td
+                        class="whitespace-nowrap p-3 text-end font-medium"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6.455 1.45A.5.5 0 0 1 6.952 1h2.096a.5.5 0 0 1 .497.45l.186 1.858a4.996 4.996 0 0 1 1.466.848l1.703-.769a.5.5 0 0 1 .639.206l1.047 1.814a.5.5 0 0 1-.14.656l-1.517 1.09a5.026 5.026 0 0 1 0 1.694l1.516 1.09a.5.5 0 0 1 .141.656l-1.047 1.814a.5.5 0 0 1-.639.206l-1.703-.768c-.433.36-.928.649-1.466.847l-.186 1.858a.5.5 0 0 1-.497.45H6.952a.5.5 0 0 1-.497-.45l-.186-1.858a4.993 4.993 0 0 1-1.466-.848l-1.703.769a.5.5 0 0 1-.639-.206l-1.047-1.814a.5.5 0 0 1 .14-.656l1.517-1.09a5.033 5.033 0 0 1 0-1.694l-1.516-1.09a.5.5 0 0 1-.141-.656L2.46 3.593a.5.5 0 0 1 .639-.206l1.703.769c.433-.36.928-.65 1.466-.848l.186-1.858Zm-.177 7.567-.022-.037a2 2 0 0 1 3.466-1.997l.022.037a2 2 0 0 1-3.466 1.997Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Manage</span>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-zinc-100 hover:bg-zinc-50">
+                      <td
+                        class="p-3 text-start font-semibold text-zinc-600"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
+                        >
+                          example6.com
+                        </a>
+                      </td>
+                      <td class="p-3 text-start">
+                        <div
+                          class="inline-flex items-center gap-1.5 font-medium"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-mini hi-check-circle inline-block size-5 text-emerald-500"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Active</span>
+                        </div>
+                      </td>
+                      <td class="p-3 font-medium text-zinc-600">
+                        <label class="inline-flex items-center">
+                          <input
+                            type="checkbox"
+                            class="size-4 rounded border border-zinc-200 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-500/50 dark:border-zinc-600 dark:bg-zinc-800 dark:ring-offset-zinc-900 dark:checked:border-transparent dark:checked:bg-blue-500 dark:focus:border-blue-500"
+                            checked
+                          />
+                          <span class="ml-2">Enable</span>
+                        </label>
+                      </td>
+                      <td class="p-3 text-start text-zinc-600">
+                        in 1 year
+                      </td>
+                      <td
+                        class="whitespace-nowrap p-3 text-end font-medium"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6.455 1.45A.5.5 0 0 1 6.952 1h2.096a.5.5 0 0 1 .497.45l.186 1.858a4.996 4.996 0 0 1 1.466.848l1.703-.769a.5.5 0 0 1 .639.206l1.047 1.814a.5.5 0 0 1-.14.656l-1.517 1.09a5.026 5.026 0 0 1 0 1.694l1.516 1.09a.5.5 0 0 1 .141.656l-1.047 1.814a.5.5 0 0 1-.639.206l-1.703-.768c-.433.36-.928.649-1.466.847l-.186 1.858a.5.5 0 0 1-.497.45H6.952a.5.5 0 0 1-.497-.45l-.186-1.858a4.993 4.993 0 0 1-1.466-.848l-1.703.769a.5.5 0 0 1-.639-.206l-1.047-1.814a.5.5 0 0 1 .14-.656l1.517-1.09a5.033 5.033 0 0 1 0-1.694l-1.516-1.09a.5.5 0 0 1-.141-.656L2.46 3.593a.5.5 0 0 1 .639-.206l1.703.769c.433-.36.928-.65 1.466-.848l.186-1.858Zm-.177 7.567-.022-.037a2 2 0 0 1 3.466-1.997l.022.037a2 2 0 0 1-3.466 1.997Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Manage</span>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-zinc-100 hover:bg-zinc-50">
+                      <td
+                        class="p-3 text-start font-semibold text-zinc-600"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
+                        >
+                          example7.com
+                        </a>
+                      </td>
+                      <td class="p-3 text-start">
+                        <div
+                          class="inline-flex items-center gap-1.5 font-medium"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-mini hi-check-circle inline-block size-5 text-emerald-500"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Active</span>
+                        </div>
+                      </td>
+                      <td class="p-3 font-medium text-zinc-600">
+                        <label class="inline-flex items-center">
+                          <input
+                            type="checkbox"
+                            class="size-4 rounded border border-zinc-200 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-500/50 dark:border-zinc-600 dark:bg-zinc-800 dark:ring-offset-zinc-900 dark:checked:border-transparent dark:checked:bg-blue-500 dark:focus:border-blue-500"
+                            checked
+                          />
+                          <span class="ml-2">Enable</span>
+                        </label>
+                      </td>
+                      <td class="p-3 text-start text-zinc-600">
+                        <div
+                          class="inline-flex items-center gap-1.5 font-medium text-orange-500"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-micro hi-exclamation-triangle inline-block size-4"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6.701 2.25c.577-1 2.02-1 2.598 0l5.196 9a1.5 1.5 0 0 1-1.299 2.25H2.804a1.5 1.5 0 0 1-1.3-2.25l5.197-9ZM8 4a.75.75 0 0 1 .75.75v3a.75.75 0 1 1-1.5 0v-3A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>in 3 days!</span>
+                        </div>
+                      </td>
+                      <td
+                        class="whitespace-nowrap p-3 text-end font-medium"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6.455 1.45A.5.5 0 0 1 6.952 1h2.096a.5.5 0 0 1 .497.45l.186 1.858a4.996 4.996 0 0 1 1.466.848l1.703-.769a.5.5 0 0 1 .639.206l1.047 1.814a.5.5 0 0 1-.14.656l-1.517 1.09a5.026 5.026 0 0 1 0 1.694l1.516 1.09a.5.5 0 0 1 .141.656l-1.047 1.814a.5.5 0 0 1-.639.206l-1.703-.768c-.433.36-.928.649-1.466.847l-.186 1.858a.5.5 0 0 1-.497.45H6.952a.5.5 0 0 1-.497-.45l-.186-1.858a4.993 4.993 0 0 1-1.466-.848l-1.703.769a.5.5 0 0 1-.639-.206l-1.047-1.814a.5.5 0 0 1 .14-.656l1.517-1.09a5.033 5.033 0 0 1 0-1.694l-1.516-1.09a.5.5 0 0 1-.141-.656L2.46 3.593a.5.5 0 0 1 .639-.206l1.703.769c.433-.36.928-.65 1.466-.848l.186-1.858Zm-.177 7.567-.022-.037a2 2 0 0 1 3.466-1.997l.022.037a2 2 0 0 1-3.466 1.997Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Manage</span>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-zinc-100 hover:bg-zinc-50">
+                      <td
+                        class="p-3 text-start font-semibold text-zinc-600"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
+                        >
+                          example8.com
+                        </a>
+                      </td>
+                      <td class="p-3 text-start">
+                        <div
+                          class="inline-flex items-center gap-1.5 font-medium"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-mini hi-check-circle inline-block size-5 text-emerald-500"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Active</span>
+                        </div>
+                      </td>
+                      <td class="p-3 font-medium text-zinc-600">
+                        <label class="inline-flex items-center">
+                          <input
+                            type="checkbox"
+                            class="size-4 rounded border border-zinc-200 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-500/50 dark:border-zinc-600 dark:bg-zinc-800 dark:ring-offset-zinc-900 dark:checked:border-transparent dark:checked:bg-blue-500 dark:focus:border-blue-500"
+                            checked
+                          />
+                          <span class="ml-2">Enable</span>
+                        </label>
+                      </td>
+                      <td class="p-3 text-start text-zinc-600">
+                        in 2 years
+                      </td>
+                      <td
+                        class="whitespace-nowrap p-3 text-end font-medium"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6.455 1.45A.5.5 0 0 1 6.952 1h2.096a.5.5 0 0 1 .497.45l.186 1.858a4.996 4.996 0 0 1 1.466.848l1.703-.769a.5.5 0 0 1 .639.206l1.047 1.814a.5.5 0 0 1-.14.656l-1.517 1.09a5.026 5.026 0 0 1 0 1.694l1.516 1.09a.5.5 0 0 1 .141.656l-1.047 1.814a.5.5 0 0 1-.639.206l-1.703-.768c-.433.36-.928.649-1.466.847l-.186 1.858a.5.5 0 0 1-.497.45H6.952a.5.5 0 0 1-.497-.45l-.186-1.858a4.993 4.993 0 0 1-1.466-.848l-1.703.769a.5.5 0 0 1-.639-.206l-1.047-1.814a.5.5 0 0 1 .14-.656l1.517-1.09a5.033 5.033 0 0 1 0-1.694l-1.516-1.09a.5.5 0 0 1-.141-.656L2.46 3.593a.5.5 0 0 1 .639-.206l1.703.769c.433-.36.928-.65 1.466-.848l.186-1.858Zm-.177 7.567-.022-.037a2 2 0 0 1 3.466-1.997l.022.037a2 2 0 0 1-3.466 1.997Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Manage</span>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-zinc-100 hover:bg-zinc-50">
+                      <td
+                        class="p-3 text-start font-semibold text-zinc-600"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
+                        >
+                          example9.com
+                        </a>
+                      </td>
+                      <td class="p-3 text-start">
+                        <div
+                          class="inline-flex items-center gap-1.5 font-medium"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-mini hi-check-circle inline-block size-5 text-emerald-500"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Active</span>
+                        </div>
+                      </td>
+                      <td class="p-3 font-medium text-zinc-600">
+                        <label class="inline-flex items-center">
+                          <input
+                            type="checkbox"
+                            class="size-4 rounded border border-zinc-200 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-500/50 dark:border-zinc-600 dark:bg-zinc-800 dark:ring-offset-zinc-900 dark:checked:border-transparent dark:checked:bg-blue-500 dark:focus:border-blue-500"
+                            checked
+                          />
+                          <span class="ml-2">Enable</span>
+                        </label>
+                      </td>
+                      <td class="p-3 text-start text-zinc-600">
+                        in 6 months
+                      </td>
+                      <td
+                        class="whitespace-nowrap p-3 text-end font-medium"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6.455 1.45A.5.5 0 0 1 6.952 1h2.096a.5.5 0 0 1 .497.45l.186 1.858a4.996 4.996 0 0 1 1.466.848l1.703-.769a.5.5 0 0 1 .639.206l1.047 1.814a.5.5 0 0 1-.14.656l-1.517 1.09a5.026 5.026 0 0 1 0 1.694l1.516 1.09a.5.5 0 0 1 .141.656l-1.047 1.814a.5.5 0 0 1-.639.206l-1.703-.768c-.433.36-.928.649-1.466.847l-.186 1.858a.5.5 0 0 1-.497.45H6.952a.5.5 0 0 1-.497-.45l-.186-1.858a4.993 4.993 0 0 1-1.466-.848l-1.703.769a.5.5 0 0 1-.639-.206l-1.047-1.814a.5.5 0 0 1 .14-.656l1.517-1.09a5.033 5.033 0 0 1 0-1.694l-1.516-1.09a.5.5 0 0 1-.141-.656L2.46 3.593a.5.5 0 0 1 .639-.206l1.703.769c.433-.36.928-.65 1.466-.848l.186-1.858Zm-.177 7.567-.022-.037a2 2 0 0 1 3.466-1.997l.022.037a2 2 0 0 1-3.466 1.997Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Manage</span>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr class="border-b border-zinc-100 hover:bg-zinc-50">
+                      <td
+                        class="p-3 text-start font-semibold text-zinc-600"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
+                        >
+                          example10.com
+                        </a>
+                      </td>
+                      <td class="p-3 text-start">
+                        <div
+                          class="inline-flex items-center gap-1.5 font-medium"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-mini hi-check-circle inline-block size-5 text-emerald-500"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Active</span>
+                        </div>
+                      </td>
+                      <td class="p-3 font-medium text-zinc-600">
+                        <label class="inline-flex items-center">
+                          <input
+                            type="checkbox"
+                            class="size-4 rounded border border-zinc-200 text-blue-500 focus:border-blue-500 focus:ring focus:ring-blue-500/50 dark:border-zinc-600 dark:bg-zinc-800 dark:ring-offset-zinc-900 dark:checked:border-transparent dark:checked:bg-blue-500 dark:focus:border-blue-500"
+                            checked
+                          />
+                          <span class="ml-2">Enable</span>
+                        </label>
+                      </td>
+                      <td class="p-3 text-start text-zinc-600">
+                        in 6 months
+                      </td>
+                      <td
+                        class="whitespace-nowrap p-3 text-end font-medium"
+                      >
+                        <a
+                          href="javascript:void(0)"
+                          class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 16 16"
+                            fill="currentColor"
+                            data-slot="icon"
+                            class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M6.455 1.45A.5.5 0 0 1 6.952 1h2.096a.5.5 0 0 1 .497.45l.186 1.858a4.996 4.996 0 0 1 1.466.848l1.703-.769a.5.5 0 0 1 .639.206l1.047 1.814a.5.5 0 0 1-.14.656l-1.517 1.09a5.026 5.026 0 0 1 0 1.694l1.516 1.09a.5.5 0 0 1 .141.656l-1.047 1.814a.5.5 0 0 1-.639.206l-1.703-.768c-.433.36-.928.649-1.466.847l-.186 1.858a.5.5 0 0 1-.497.45H6.952a.5.5 0 0 1-.497-.45l-.186-1.858a4.993 4.993 0 0 1-1.466-.848l-1.703.769a.5.5 0 0 1-.639-.206l-1.047-1.814a.5.5 0 0 1 .14-.656l1.517-1.09a5.033 5.033 0 0 1 0-1.694l-1.516-1.09a.5.5 0 0 1-.141-.656L2.46 3.593a.5.5 0 0 1 .639-.206l1.703.769c.433-.36.928-.65 1.466-.848l.186-1.858Zm-.177 7.567-.022-.037a2 2 0 0 1 3.466-1.997l.022.037a2 2 0 0 1-3.466 1.997Z"
+                              clip-rule="evenodd"
+                            />
+                          </svg>
+                          <span>Manage</span>
+                        </a>
+                      </td>
                     </tr>
                   </tbody>
                   <!-- END Table Body -->

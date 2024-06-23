@@ -30,7 +30,7 @@
         href="javascript:void(0)"
         class="group flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-zinc-800 hover:bg-purple-100 hover:text-purple-950 active:bg-purple-200/75"
       >
-        <span>Servers</span>
+        <span>Home</span>
       </a>
       <a
         href="javascript:void(0)"
@@ -172,45 +172,69 @@
       <!-- END Notifications -->
 
       <!-- User Dropdown -->
-      <div class="relative inline-block">
-        <!-- Dropdown Toggle Button -->
-        <button
-          x-on:click="userDropdownOpen = !userDropdownOpen"
-          x-bind:aria-expanded="userDropdownOpen"
-          type="button"
-          id="dropdown-user"
-          class="inline-flex items-center justify-center gap-1 rounded-lg border border-zinc-200 px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
-          aria-haspopup="true"
-        >
+<div class="relative inline-block">
+  <!-- Dropdown Toggle Button -->
+  <button
+      x-on:click="userDropdownOpen = !userDropdownOpen"
+      x-bind:aria-expanded="userDropdownOpen"
+      type="button"
+      id="dropdown-user"
+      class="inline-flex items-center justify-center gap-1 rounded-lg border border-zinc-200 px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+      aria-haspopup="true"
+  >
+      <!-- SVG Icon for Small Screens -->
+      @if(Auth::check() && Auth::user()->profile_picture)
+          <img
+              src="{{ Storage::url(Auth::user()->profile_picture) }}"
+              alt="Profile Picture"
+              class="inline-block h-5 w-5 rounded-full sm:hidden"
+          />
+      @else
           <svg
-            class="hi-mini hi-user-circle inline-block h-5 w-5 sm:hidden"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
+              class="hi-mini hi-user-circle inline-block h-5 w-5 sm:hidden"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
           >
-            <path
-              fill-rule="evenodd"
-              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM10 12a5.99 5.99 0 00-4.793 2.39A6.483 6.483 0 0010 16.5a6.483 6.483 0 004.793-2.11A5.99 5.99 0 0010 12z"
-              clip-rule="evenodd"
-            />
+              <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM10 12a5.99 5.99 0 00-4.793 2.39A6.483 6.483 0 0010 16.5a6.483 6.483 0 004.793-2.11A5.99 5.99 0 0010 12z"
+                  clip-rule="evenodd"
+              />
           </svg>
-          <span class="hidden sm:inline">John</span>
-          <svg
-            class="hi-mini hi-chevron-down hidden h-5 w-5 opacity-40 sm:inline-block"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </button>
-        <!-- END Dropdown Toggle Button -->
+      @endif
+      
+      <!-- User Name and Profile Picture for Larger Screens -->
+      @auth
+          <span class="hidden sm:inline">{{ Auth::user()->name }}</span>
+          @if(Auth::user()->profile_picture)
+              <img
+                  src="{{ Storage::url(Auth::user()->profile_picture) }}"
+                  alt="Profile Picture"
+                  class="hidden sm:inline-block h-5 w-5 rounded-full"
+              />
+          @else
+              <!-- Fallback if no profile picture is available -->
+              <svg
+                  class="hi-mini hi-chevron-down hidden h-5 w-5 opacity-40 sm:inline-block"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+              >
+                  <path
+                      fill-rule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                      clip-rule="evenodd"
+                  />
+              </svg>
+          @endif
+      @endauth
+  </button>
+  <!-- END Dropdown Toggle Button -->
+
+
 
         <!-- Dropdown -->
         <div
@@ -245,15 +269,15 @@
               <span class="grow">Settings</span>
             </a>
             <hr class="my-2.5 border-zinc-100" />
-            <form onsubmit="return false;">
-              <button
-                type="submit"
-                role="menuitem"
-                class="group flex w-full items-center justify-between gap-1.5 px-4 py-1.5 text-start text-sm font-medium text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950"
-              >
-                <span class="grow">Sign out</span>
-              </button>
-            </form>
+            <form method="POST" action="{{ route('logout') }}">
+              @csrf
+
+              <x-dropdown-link :href="route('logout')"
+                      onclick="event.preventDefault();
+                                  this.closest('form').submit();">
+                  {{ __('Log Out') }}
+              </x-dropdown-link>
+          </form>
           </div>
         </div>
         <!-- END Dropdown -->
