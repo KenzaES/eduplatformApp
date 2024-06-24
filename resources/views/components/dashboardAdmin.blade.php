@@ -4,7 +4,7 @@
     <!-- Page Content -->
     <main
       id="page-content"
-      class="mx-auto flex w-full flex-auto flex-col border-y-8 border-zinc-200/60 bg-white sm:max-w-2xl sm:rounded-xl sm:border-8 md:max-w-3xl lg:max-w-5xl xl:max-w-7xl"
+      class=" glass-effect mx-auto flex w-full flex-auto flex-col border-y-8 border-zinc-200/60 sm:max-w-2xl sm:rounded-xl sm:border-8 md:max-w-3xl lg:max-w-5xl xl:max-w-7xl"
     >
       <!-- Page Heading -->
       <div class="container mx-auto px-4 pt-6 lg:px-8 lg:pt-8">
@@ -61,7 +61,7 @@
           <!-- Quick Statistics -->
           <a
             href="javascript:void(0)"
-            class="flex flex-col rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 lg:col-span-3"
+            class="flex flex-col rounded-lg border border-4 border-zinc-200 bg-white hover:border-purple-500 active:border-purple-200 lg:col-span-3"
           >
             <div class="flex grow items-center justify-between p-5">
               <dl>
@@ -89,7 +89,7 @@
           </a>
           <a
             href="javascript:void(0)"
-            class="flex flex-col rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 lg:col-span-3"
+            class="flex flex-col rounded-lg border border-4 border-zinc-200 bg-white hover:border-purple-500 active:border-purple-200 lg:col-span-3"
           >
             <div class="flex grow items-center justify-between p-5">
               <dl>
@@ -117,7 +117,7 @@
           </a>
           <a
             href="javascript:void(0)"
-            class="flex flex-col rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 lg:col-span-3"
+            class="flex flex-col rounded-lg border border-4 border-zinc-200 bg-white hover:border-purple-500 active:border-purple-200 lg:col-span-3"
           >
             <div class="flex grow items-center justify-between p-5">
               <dl>
@@ -149,7 +149,7 @@
           </a>
           <a
             href="javascript:void(0)"
-            class="flex flex-col rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 lg:col-span-3"
+            class="flex flex-col rounded-lg border border-4 border-zinc-200 bg-white hover:border-purple-500 active:border-purple-200 lg:col-span-3"
           >
             <div class="flex grow items-center justify-between p-5">
               <dl>
@@ -184,81 +184,9 @@
           </a>
           <!-- END Quick Statistics -->
 
-          <!-- Charts -->
-          <a
-            href="javascript:void(0)"
-            class="flex flex-col overflow-hidden rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 lg:col-span-4"
-          >
-            <dl class="px-6 pt-6">
-              <dt class="text-2xl font-bold">12%</dt>
-              <dd class="text-sm font-medium text-slate-500">
-                Learners Progress
-              </dd>
-            </dl>
-            <div class="-m-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1600 900"
-                fill="currentColor"
-                class="w-auto text-purple-100"
-              >
-                <path
-                  d="M0 900h91.429V754q0-4-4-4H4q-4 0-4 4Zm114.286 0h91.428V604q0-4-4-4h-83.428q-4 0-4 4Zm114.285 0H320V154q0-4-4-4h-83.429q-4 0-4 4Zm114.286 0h91.429V304q0-4-4-4h-83.429q-4 0-4 4Zm114.286 0h91.428V754q0-4-4-4h-83.428q-4 0-4 4Zm114.286 0h91.428V754q0-4-4-4H575.43q-4 0-4 4Zm114.285 0h91.429V604q0-4-4-4h-83.429q-4 0-4 4ZM800 900h91.429V454q0-4-4-4H804q-4 0-4 4Zm114.286 0h91.428V604q0-4-4-4h-83.428q-4 0-4 4Zm114.285 0H1120V754q0-4-4-4h-83.429q-4 0-4 4Zm114.286 0h91.429V604q0-4-4-4h-83.429q-4 0-4 4Zm114.286 0h91.428V454q0-4-4-4h-83.428q-4 0-4 4Zm114.286 0h91.428V604q0-4-4-4h-83.428q-4 0-4 4Zm114.285 0h91.429V754q0-4-4-4h-83.429q-4 0-4 4Z"
-                />
-              </svg>
-            </div>
-          </a>
-          <a
-            href="javascript:void(0)"
-            class="flex flex-col overflow-hidden rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 lg:col-span-4"
-          >
-            <dl class="px-6 pt-6">
-              <dt class="text-2xl font-bold">40%</dt>
-              <dd class="text-sm font-medium text-slate-500">
-                Instructors active
-              </dd>
-            </dl>
-            <div class="-m-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1600 900"
-                fill="currentColor"
-                class="w-auto text-purple-100"
-              >
-                <path
-                  d="M0 1000h114.286V785.78q0-4-4-4H4q-4 0-4 4Zm142.857 0h114.286V162.391q0-4-4-4H146.857q-4 0-4 4Zm142.857 0H400V331.99q0-4-4-4H289.714q-4 0-4 4Zm142.857 0h114.286V748.382q0-4-4-4H432.571q-4 0-4 4Zm142.858 0h114.285V800.545q0-4-4-4H575.43q-4 0-4 4Zm142.857 0H828.57V674.705q0-4-4-4H718.286q-4 0-4 4Zm142.857 0h114.286V326.274q0-4-4-4H861.143q-4 0-4 4Zm142.857 0h114.286V484.918q0-4-4-4H1004q-4 0-4 4Zm142.857 0h114.286V277.255q0-4-4-4h-106.286q-4 0-4 4Zm142.857 0H1400V729.966q0-4-4-4h-106.286q-4 0-4 4Zm142.857 0h114.286V370.221q0-4-4-4h-106.286q-4 0-4 4Zm142.858 0h114.285V270.449q0-4-4-4H1575.43q-4 0-4 4Zm142.857 0h114.285V779.167q0-4-4-4h-106.285q-4 0-4 4Zm142.857 0h114.286V513.723q0-4-4-4h-106.286q-4 0-4 4Z"
-                />
-              </svg>
-            </div>
-          </a>
-          <a
-            href="javascript:void(0)"
-            class="flex flex-col overflow-hidden rounded-lg border border-zinc-200 bg-white hover:bg-zinc-50/50 active:border-purple-200 sm:col-span-2 lg:col-span-4"
-          >
-            <dl class="px-6 pt-6">
-              <dt class="text-2xl font-bold">50%</dt>
-              <dd class="text-sm font-medium text-slate-500">
-                Courses Completion
-              </dd>
-            </dl>
-            <div class="-m-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1600 900"
-                fill="currentColor"
-                class="w-auto text-purple-100"
-              >
-                <path
-                  d="M0 1000h114.286V192.127q0-4-4-4H4q-4 0-4 4Zm142.857 0h114.286V344.652q0-4-4-4H146.857q-4 0-4 4Zm142.857 0H400V471.35q0-4-4-4H289.714q-4 0-4 4Zm142.857 0h114.286V682.95q0-4-4-4H432.571q-4 0-4 4Zm142.858 0h114.285V503.005q0-4-4-4H575.43q-4 0-4 4Zm142.857 0H828.57V548.415q0-4-4-4H718.286q-4 0-4 4Zm142.857 0h114.286V774.679q0-4-4-4H861.143q-4 0-4 4Zm142.857 0h114.286V129.482q0-4-4-4H1004q-4 0-4 4Zm142.857 0h114.286V640.862q0-4-4-4h-106.286q-4 0-4 4Zm142.857 0H1400V465.367q0-4-4-4h-106.286q-4 0-4 4Zm142.857 0h114.286V604.912q0-4-4-4h-106.286q-4 0-4 4Zm142.858 0h114.285V595.61q0-4-4-4H1575.43q-4 0-4 4Zm142.857 0h114.285V125.72q0-4-4-4h-106.285q-4 0-4 4Zm142.857 0h114.286V319.097q0-4-4-4h-106.286q-4 0-4 4Z"
-                />
-              </svg>
-            </div>
-          </a>
-          <!-- END Charts -->
-
-          <!-- Servers -->
+            <!-- Servers -->
           <div
-            class="flex flex-col rounded-lg border bg-white sm:col-span-2 lg:col-span-12"
+            class="flex flex-col rounded-lg border-4 bg-white sm:col-span-2 lg:col-span-12"
           >
             <div
               class="flex flex-col items-center justify-between gap-4 border-b border-zinc-100 p-5 text-center sm:flex-row sm:text-start"
@@ -270,23 +198,10 @@
                 </h3>
               </div>
               <div>
-                <a
-                  href="javascript:void(0)"
-                  class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-purple-600 bg-purple-600 px-3 py-2 text-sm font-semibold leading-5 text-white hover:border-purple-700 hover:bg-purple-700 active:border-purple-600 active:bg-purple-600"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    data-slot="icon"
-                    class="hi-mini hi-plus inline-block size-5 opacity-50"
-                  >
-                    <path
-                      d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z"
-                    />
-                  </svg>
-                  <span>New instructor</span>
-                </a>
+                              
+                  <!-- Modal toggle -->
+                  {{-- <x-modalAddInstructor/> --}}
+                  
               </div>
             </div>
             <div class="p-5">
@@ -433,7 +348,7 @@
 
           <!-- Domains -->
           <div
-            class="flex flex-col rounded-lg border bg-white sm:col-span-2 lg:col-span-12"
+            class="flex flex-col rounded-lg border-4 border-purple-500 bg-white sm:col-span-2 lg:col-span-12"
           >
             <div
               class="flex flex-col items-center justify-between gap-4 border-b border-zinc-100 p-5 text-center sm:flex-row sm:text-start"
