@@ -1,6 +1,3 @@
-
-
-
     <!-- Page Content -->
     <main
       id="page-content"

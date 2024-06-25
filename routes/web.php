@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,9 +32,13 @@ Route::middleware(['auth'])->group(function () {
         return view('learner.dashboard');
     })->name('learner.dashboard');
 
+    //redirect user after registration to dashborad/index i should change it to welcome page
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 });
 
 require __DIR__.'/auth.php';
+
+// display users from users table in admin dashboard
+Route::get('/admin/dashboard',[RegisteredUserController::class,'createAdminAddForm'])->name('admin.dashboard');

@@ -184,6 +184,187 @@
           </a>
           <!-- END Quick Statistics -->
 
+                     <!-- start users table -->
+                     <div
+                     class="flex flex-col rounded-lg border-4 bg-white sm:col-span-2 lg:col-span-12"
+                   >
+                     <div
+                       class="flex flex-col items-center justify-between gap-4 border-b border-zinc-100 p-5 text-center sm:flex-row sm:text-start"
+                     >
+                       <div>
+                         <h2 class="mb-0.5 font-semibold">All Users</h2>
+                         <h3 class="text-sm font-medium text-zinc-600">
+                           You have nbr of active instructors, and nbr learner.
+                         </h3>
+                       </div>
+                       
+                                       
+                        <div>
+                          <a
+                            href="javascript:void(0)"
+                            class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-purple-600 bg-purple-600 px-3 py-2 text-sm font-semibold leading-5 text-white hover:border-purple-700 hover:bg-purple-700 active:border-purple-600 active:bg-purple-600"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 20 20"
+                              fill="currentColor"
+                              data-slot="icon"
+                              class="hi-mini hi-plus inline-block size-5 opacity-50"
+                            >
+                              <path
+                                d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z"
+                              />
+                            </svg>
+                            <span>New User</span>
+                          </a>
+                        </div>
+                           
+                       
+                     </div>
+                     <div class="p-5">
+                       <!-- Responsive Table Container -->
+                       <div class="min-w-full overflow-x-auto rounded">
+                         <!-- Alternate Responsive Table -->
+                         <table class="min-w-full align-middle text-sm">
+                           <!-- Table Header -->
+                           <thead>
+                             <tr class="border-b-2 border-zinc-100">
+                              <th
+                                 class="min-w-[140px] px-3 py-2 text-start text-sm font-semibold uppercase tracking-wider text-zinc-700"
+                               >
+                                 Profile Photo
+                               </th>
+                               <th
+                                 class="min-w-[140px] px-3 py-2 text-start text-sm font-semibold uppercase tracking-wider text-purple-500"
+                               >
+                                 Name
+                               </th>
+                               <th
+                                 class="min-w-[180px] px-3 py-2 text-start text-sm font-semibold uppercase tracking-wider text-zinc-700"
+                               >
+                                 email
+                               </th>
+                               <th
+                                 class="min-w-[180px] px-3 py-2 text-start text-sm font-semibold uppercase tracking-wider text-purple-500"
+                               >
+                                 Category
+                               </th>
+                               <th
+                                 class="min-w-[180px] px-3 py-2 text-start text-sm font-semibold uppercase tracking-wider text-zinc-700"
+                               >
+                                 Bio
+                               </th>
+                               
+                               <th
+                                 class="min-w-[100px] p-3 py-2 text-end text-sm font-semibold uppercase tracking-wider text-purple-500"
+                               ></th>
+                             </tr>
+                           </thead>
+                           <!-- END Table Header -->
+         
+                           <!-- Table Body -->
+                           <tbody>
+                             <tr class="border-b border-zinc-100 hover:bg-zinc-50">
+                              @foreach ($users as $user)
+                               <td
+                                 class="p-3 text-start font-semibold text-zinc-600"
+                               >
+                                 <a
+                                   href="javascript:void(0)"
+                                   class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
+                                 >
+                                   {{$user->profile_picture}}
+                                 </a>
+                               </td>
+                               <td class="p-3 text-start">
+                                 <div
+                                   class="inline-flex items-center gap-1.5 font-medium"
+                                 >
+                                   {{-- <svg
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 20 20"
+                                     fill="currentColor"
+                                     data-slot="icon"
+                                     class="hi-mini hi-check-circle inline-block size-5 text-emerald-500"
+                                   >
+                                     <path
+                                       fill-rule="evenodd"
+                                       d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                                       clip-rule="evenodd"
+                                     />
+                                   </svg> --}}
+                                   <span>{{$user->name}}</span>
+                                 </div>
+                               </td>
+                               <td class="p-3 font-medium text-zinc-600">
+                                 <a
+                                   href="javascript:void(0)"
+                                   class="underline decoration-zinc-200 decoration-2 underline-offset-4 hover:text-zinc-950 hover:decoration-zinc-300"
+                                 >
+                                 {{$user->email}}
+                                 </a>
+                               </td>
+                               <td class="p-3 text-start">{{$user->category}}</td>
+                               <td
+                                 class="whitespace-nowrap p-3 font-medium text-zinc-600"
+                               >
+                                 {{$user->bio}}
+                               </td>
+                               <td
+                                 class="whitespace-nowrap p-3 text-end font-medium"
+                               >
+                                 <a
+                                   href="javascript:void(0)"
+                                   class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+                                 >
+                                   <svg
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 16 16"
+                                     fill="currentColor"
+                                     data-slot="icon"
+                                     class="hi-micro hi-arrow-path inline-block size-4 opacity-50"
+                                   >
+                                     <path
+                                       fill-rule="evenodd"
+                                       d="M13.836 2.477a.75.75 0 0 1 .75.75v3.182a.75.75 0 0 1-.75.75h-3.182a.75.75 0 0 1 0-1.5h1.37l-.84-.841a4.5 4.5 0 0 0-7.08.932.75.75 0 0 1-1.3-.75 6 6 0 0 1 9.44-1.242l.842.84V3.227a.75.75 0 0 1 .75-.75Zm-.911 7.5A.75.75 0 0 1 13.199 11a6 6 0 0 1-9.44 1.241l-.84-.84v1.371a.75.75 0 0 1-1.5 0V9.591a.75.75 0 0 1 .75-.75H5.35a.75.75 0 0 1 0 1.5H3.98l.841.841a4.5 4.5 0 0 0 7.08-.932.75.75 0 0 1 1.025-.273Z"
+                                       clip-rule="evenodd"
+                                     />
+                                   </svg>
+                                   <span>Update</span>
+                                 </a>
+                                 <a
+                                   href="javascript:void(0)"
+                                   class="inline-flex items-center justify-center gap-2 rounded-lg border border-zinc-200 bg-white px-3 py-2 text-sm font-semibold leading-5 text-zinc-800 hover:border-zinc-300 hover:text-zinc-950 active:border-zinc-200"
+                                 >
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;" class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm10.618-3L15 2H9L7.382 4H3v2h18V4z"></path></svg>
+                                   {{-- <svg
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 16 16"
+                                     fill="currentColor"
+                                     data-slot="icon"
+                                     class="hi-micro hi-cog-6-tooth inline-block size-4 opacity-50"
+                                   >
+                                     <path
+                                       fill-rule="evenodd"
+                                       d="M6.455 1.45A.5.5 0 0 1 6.952 1h2.096a.5.5 0 0 1 .497.45l.186 1.858a4.996 4.996 0 0 1 1.466.848l1.703-.769a.5.5 0 0 1 .639.206l1.047 1.814a.5.5 0 0 1-.14.656l-1.517 1.09a5.026 5.026 0 0 1 0 1.694l1.516 1.09a.5.5 0 0 1 .141.656l-1.047 1.814a.5.5 0 0 1-.639.206l-1.703-.768c-.433.36-.928.649-1.466.847l-.186 1.858a.5.5 0 0 1-.497.45H6.952a.5.5 0 0 1-.497-.45l-.186-1.858a4.993 4.993 0 0 1-1.466-.848l-1.703.769a.5.5 0 0 1-.639-.206l-1.047-1.814a.5.5 0 0 1 .14-.656l1.517-1.09a5.033 5.033 0 0 1 0-1.694l-1.516-1.09a.5.5 0 0 1-.141-.656L2.46 3.593a.5.5 0 0 1 .639-.206l1.703.769c.433-.36.928-.65 1.466-.848l.186-1.858Zm-.177 7.567-.022-.037a2 2 0 0 1 3.466-1.997l.022.037a2 2 0 0 1-3.466 1.997Z"
+                                       clip-rule="evenodd"
+                                     />
+                                   </svg> --}}
+                                   <span>Delete</span>
+                                 </a>
+                               </td>
+                             </tr>
+                             @endforeach
+                           </tbody>
+                           <!-- END Table Body -->
+                         </table>
+                         <!-- END Alternate Responsive Table -->
+                       </div>
+                       <!-- END Responsive Table Container -->
+                     </div>
+                   </div>
+                   <!-- END users table -->
+
             <!-- Servers -->
           <div
             class="flex flex-col rounded-lg border-4 bg-white sm:col-span-2 lg:col-span-12"

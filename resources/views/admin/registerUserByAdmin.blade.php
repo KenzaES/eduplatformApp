@@ -24,10 +24,10 @@
         </g>
       </g>
     </svg>
-    
+        
       <div class="sm:flex sm:flex-row shadow-xl">
           <div class="ml-12">
-              <img class="w-full min-h-screen md:w-4/5 z-50" src="{{ asset('images/Sign up-bro.svg') }}" >
+              <img class="w-full min-h-screen md:w-4/5 z-50" src="{{ asset('images/Wall post-amico.svg') }}" >
           </div>
           <div class="w-full">
               <x-auth-card>
@@ -43,9 +43,9 @@
                   <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                       @csrf
                       <div class="mb-7">
-                          <h3 class="font-semibold text-2xl text-gray-800">Register</h3>
-                          <p class="text-gray-400">Do you have an account? <a href="{{ route('login') }}" class="text-sm text-purple-700 hover:text-purple-700">Sign In</a></p>
-                      </div>
+                        <h3 class="font-semibold text-2xl text-gray-800">Add User</h3>
+                        
+                    </div>
                       <!-- Name -->
                       <div>
                           <x-label for="name" :value="__('Name')" />
@@ -103,10 +103,7 @@
                       <div class="mt-4">
                           <x-label for="role" :value="__('Register as')" />
                           <div class="flex justify-around">
-                              {{-- <label>
-                                  <input type="radio" name="role" value="admin" required>
-                                  <span>{{ __('Admin') }}</span>
-                              </label> --}}
+                              
                               <label>
                                   <input type="radio" name="role" value="instructor" required>
                                   <span>{{ __('Instructor') }}</span>
@@ -119,9 +116,7 @@
                       </div>
 
                       <div class="flex items-center justify-end mt-4">
-                          <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                              {{ __('Already registered?') }}
-                          </a>
+                          
                           <x-button class="ml-4">
                               {{ __('Register') }}
                           </x-button>

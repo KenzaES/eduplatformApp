@@ -24,7 +24,20 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
+        
         return view('auth.register');
+    }
+
+    public function createAdminAddForm()
+    {
+        // $users = User::all(); // Fetch all users to pass to the view
+
+        // return view('admin.dashboard', compact('users'));
+        $users = User::whereDoesntHave('roles', function($query) {
+            $query->where('name', 'admin');
+        })->with('roles')->get();
+
+        return view('admin.dashboard', compact('users'));
     }
 
     /**
@@ -43,6 +56,8 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'profile_picture' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
             'role' => ['required', 'string', 'in:admin,instructor,learner'], 
+            'category' => ['required_if:role,instructor', 'string'],
+            'bio' => ['required', 'string'],
     ]);
 
        // Handle profile picture upload
@@ -57,6 +72,8 @@ class RegisteredUserController extends Controller
         'email' => $request->email,
         'password' => Hash::make($request->password),
         'profile_picture' => $profilePicturePath, // Store profile picture path
+        'category' => $request->category,
+        'bio' => $request->bio,
     ]);
 
        // Assign role based on the selected role
