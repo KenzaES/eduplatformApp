@@ -75,8 +75,8 @@
     <select id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
         <option selected disabled>Select category</option>
         <option value="Math">Math</option>
-        <option value="Web">Web Development</option>
-        <option value="Cyber">Cybersecurity</option>
+        <option value="WebDevelopement">Web Development</option>
+        <option value="Cybersecurity">Cybersecurity</option>
         <option value="IA">IA</option>
         <option value="Other">Other</option>
     </select>

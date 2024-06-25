@@ -1,8 +1,15 @@
-<x-guest-layout>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-
+{{-- <x-app-layout>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
+  <x-app-layout>
+    <x-slot name="header" >
+        {{-- <h2 class="font-semibold text-xl text-gray-800 leading-tight ">
+            {{ __('Dashboard') }}
+        </h2> --}}
+    </x-slot>
+  
+    <div class="py-12">
   <section class="custom-gradientReg w-full h-full mx-auto text-center">
-      <!-- Change the colour #f8fafc to match the previous section colour (wave effect)-->
+      <!-- (wave effect)-->
   <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g transform="translate(-1.000000, -14.000000)" fill-rule="nonzero">
@@ -24,10 +31,11 @@
         </g>
       </g>
     </svg>
+    {{-- end wave effect --}}
         
       <div class="sm:flex sm:flex-row shadow-xl">
           <div class="ml-12">
-              <img class="w-full min-h-screen md:w-4/5 z-50" src="{{ asset('images/Wall post-amico.svg') }}" >
+              <img class="w-full min-h-screen md:w-11/12 z-50" src="{{ asset('images/Wall post-amico.svg') }}" >
           </div>
           <div class="w-full">
               <x-auth-card>
@@ -40,7 +48,7 @@
                   <!-- Validation Errors -->
                   <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-                  <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+                  <form method="POST" action="{{ route('admin.register') }}" enctype="multipart/form-data">
                       @csrf
                       <div class="mb-7">
                         <h3 class="font-semibold text-2xl text-gray-800">Add User</h3>
@@ -118,7 +126,7 @@
                       <div class="flex items-center justify-end mt-4">
                           
                           <x-button class="ml-4">
-                              {{ __('Register') }}
+                              {{ __('Add User') }}
                           </x-button>
                       </div>
                   </form>
@@ -143,4 +151,4 @@
       </g>
     </svg>
   </section>
-</x-guest-layout>
+</x-app-layout>

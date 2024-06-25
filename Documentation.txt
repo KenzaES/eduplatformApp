@@ -4,3 +4,10 @@ https://devdojo.com/bobbyiliev/how-to-add-a-new-column-to-an-existing-table-in-a
 //illustration 
 https://storyset.com/
 
+//how to use alpineJS
+https://benjamincrozat.com/alpine-js-laravel
+
+
+//tips for improuve Laravel using 
+https://benjamincrozat.com/laravel-best-practices
+

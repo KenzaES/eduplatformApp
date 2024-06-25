@@ -41,4 +41,13 @@ Route::middleware(['auth'])->group(function () {
 require __DIR__.'/auth.php';
 
 // display users from users table in admin dashboard
-Route::get('/admin/dashboard',[RegisteredUserController::class,'createAdminAddForm'])->name('admin.dashboard');
+Route::get('/admin/dashboard',
+[RegisteredUserController::class,'createAdminAddForm'
+])->name('admin.dashboard');
+
+// Add users by admin
+// Route for displaying the add user form
+Route::get('/admin/register', [App\Http\Controllers\Admin\UserRegistrationController::class, 'showRegistrationForm'])->name('admin.register.form');
+
+// Route for handling the user registration
+Route::post('/admin/register', [App\Http\Controllers\Admin\UserRegistrationController::class, 'register'])->name('admin.register');
