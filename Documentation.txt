@@ -11,3 +11,6 @@ https://benjamincrozat.com/alpine-js-laravel
 //tips for improuve Laravel using 
 https://benjamincrozat.com/laravel-best-practices
 
+
+//embed youtube video
+https://www.youtube.com/watch?v=mCOOddO4kkY

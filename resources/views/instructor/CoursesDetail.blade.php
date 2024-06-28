@@ -1,3 +1,30 @@
+@php
+    use Cohensive\OEmbed\Facades\OEmbed;
+@endphp
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        
+
+    </head>
+    <body >
+        
 <div
   x-data="{ userDropdownOpen: false, notificationsDropdownOpen: false, mobileNavOpen: false }"
 >
@@ -35,6 +62,37 @@
       
      
     </nav>
+    <nav class="hidden items-center gap-2 lg:flex">
+        <a href="{{ route('show.courses') }}" class="group flex items-center gap-2 rounded-lg bg-purple-100 px-4 py-2 text-sm font-medium text-purple-950"
+        >
+          <span class="sr-only">Course List</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(2 ,132,199);transform: ;msFilter:;" class="h-6 w-6"><path d="M4 6h2v2H4zm0 5h2v2H4zm0 5h2v2H4zm16-8V6H8.023v2H18.8zM8 11h12v2H8zm0 5h12v2H8z"></path></svg>
+        </a>
+        <a href="{{ route('instructor.dashboard') }}" class="group flex items-center gap-2 rounded-lg bg-purple-100 px-4 py-2 text-sm font-medium text-purple-950"
+        >
+          <span class="sr-only">Dashboard</span>
+          <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </a>
+        <a href="{{ route('create.courses') }}" class="group flex items-center gap-2 rounded-lg bg-purple-100 px-4 py-2 text-sm font-medium text-purple-950"
+        >
+          <span class="sr-only">Create Course</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(2 ,132,199);transform: ;msFilter:;" class="h-6 w-6"><path d="M13 9h-2v3H8v2h3v3h2v-3h3v-2h-3z"></path><path d="M20 5h-8.586L9.707 3.293A.996.996 0 0 0 9 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V7c0-1.103-.897-2-2-2zM4 19V7h16l.002 12H4z"></path></svg>
+        </a>
+        <a href="#" class="group flex items-center gap-2 rounded-lg bg-purple-100 px-4 py-2 text-sm font-medium text-purple-950"
+        >
+          <span class="sr-only">Media</span>
+          
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(2 ,132,199)" class="h-6 w-6"><path d="M300-180v-200l160 100-160 100Zm220-380q-50 0-85-35t-35-85q0-50 35-85t85-35h50v60h-50q-25 0-42.5 17.5T460-680q0 25 17.5 42.5T520-620h50v60h-50Zm110 0v-60h50q25 0 42.5-17.5T740-680q0-25-17.5-42.5T680-740h-50v-60h50q50 0 85 35t35 85q0 50-35 85t-85 35h-50Zm-110-90v-60h160v60H520Zm124 250v-80h196v-360H360v360h-80v-360q0-33 23.5-56.5T360-920h480q33 0 56.5 23.5T920-840v360q0 33-23.5 56.5T840-400H644ZM120-40q-33 0-56.5-23.5T40-120v-320q0-33 23.5-56.5T120-520h480q33 0 56.5 23.5T680-440v320q0 33-23.5 56.5T600-40H120Zm0-80h480v-320H120v320Zm480-540ZM360-280Z"/></svg>
+        </a>
+        <a href="{{ route('show.cards') }}" class="group flex items-center gap-2 rounded-lg bg-purple-100 px-4 py-2 text-sm font-medium text-purple-950"
+        >
+          <span class="sr-only">Home</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(2 ,132,199);transform: ;msFilter:;"><path d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a.999.999 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586 6 6V15l.001 5H16v-5c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H6v-9.586l6-6z"></path>
+        </svg>
+      </a>
+      </nav>
     <!-- END Desktop Navigation -->
 
     <!-- Extra -->
@@ -334,3 +392,202 @@
 <!-- END Mobile Navigation -->
 </div>
 </header>
+
+
+      <main>
+          <!-- Course Header Section -->
+          <section class="custom-gradientReg text-white py-8">
+              <div class="container mx-auto">
+                  <div class="flex flex-col md:flex-row items-center">
+                      <div class="md:w-2/3">
+                          <h1 class="text-4xl font-bold mb-2">{{ $course->title }}</h1>
+                          <p class="text-xl mb-4">{{ $course->category }}</p>
+                          <p class="leading-relaxed">{{ $course->description }}</p>
+                      </div>
+                      <div class="md:w-1/3 text-center md:text-right mt-4 md:mt-0">
+                          <img class="rounded-lg shadow-xl" src="{{ asset('images/' . $course->course_image) }}" alt="{{ $course->title }}">
+                      </div>
+                  </div>
+              </div>
+          </section>
+      
+          <!-- Course Overview Section -->
+<section class="grid-row-1 bg-white py-8 mx-4">
+  <div class="grid grid-cols-3 mx-auto max-w-7xl item-center">
+      <!-- First Column -->
+      <div class="bg-white shadow-xl">
+          <div class="p-6 border ">
+              <h2 class="text-3xl font-bold mb-6">{{ $course->complexity }}</h2>
+              <p class="leading-relaxed">{{ $course->language }}</p>
+          </div>
+      </div>
+
+      <!-- Second Column -->
+      <div class="bg-white shadow-xl">
+          <div class="p-6 border ">
+              <h2 class="text-3xl font-bold mb-6">{{ $course->category }}</h2>
+              <p class="leading-relaxed">{{ $course->language }}</p>
+          </div>
+      </div>
+
+      <!-- Third Column -->
+      <div class="bg-white shadow-xl">
+          <div class="p-6 border ">
+              <h2 class="text-3xl font-bold mb-6">{{ $course->price }}$</h2>
+              <p class="leading-relaxed">{{ $course->requirement }}</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+      
+          <!-- Instructor Information Section -->
+          <section class="bg-gray-100 py-8 ml-8">
+              <div class="container mx-auto">
+                  <h2 class="text-3xl font-bold mb-6">Instructor</h2>
+                  <div class="flex items-center">
+                      <img class="w-20 h-20 rounded-full mr-4" src="{{ Storage::url(Auth::user()->profile_picture) }}" alt="{{ Auth::user()->name }}">
+                      <div>
+                          <h3 class="text-xl font-semibold">{{ Auth::user()->name }}</h3>
+                          <p class="text-gray-600">Specialist in {{ Auth::user()->category }}</p>
+                      </div>
+                  </div>
+                  <div class="flex items-center">
+                    <img class="w-20 h-20 rounded-full mr-4" src="{{ Storage::url(Auth::user()->profile_picture) }}" alt="{{ Auth::user()->name }}">
+                    <div>
+                        
+                        <p class="text-gray-600">{{ Auth::user()->bio }}</p>
+                    </div>
+                </div>
+              </div>
+          </section>
+      
+          <!-- Syllabus Section -->
+          <section class="bg-white py-8">
+              <div class="container mx-auto">
+                  <h1 class="text-3xl font-bold mb-6">Course Content</h1>
+                  <div class=" pl-5">
+                      @foreach ($modules as $module)
+                          <div class="mb-4">
+                            <h2 class="text-xl font-bold">Module{{ $module->moduleNumber }}</h2>
+                              <h3 class="text-xl font-semibold italic">{{ $module->title }}</h3>
+                              <p class="leading-relaxed">{{ $module->description }}</p>
+                              <div class="">
+                                {!! $module->video !!}
+                            </div>
+                          </div>
+                      @endforeach
+                        </div>
+              </div>
+          </section>
+      
+          <!-- Reviews Section -->
+          {{-- <section class="bg-gray-100 py-8">
+              <div class="container mx-auto">
+                  <h2 class="text-3xl font-bold mb-6">Reviews</h2>
+                  @foreach ($reviews as $review)
+                      <div class="mb-6">
+                          <h3 class="text-xl font-semibold">{{ $review->user->name }}</h3>
+                          <p class="leading-relaxed">{{ $review->content }}</p>
+                      </div>
+                  @endforeach
+              </div>
+          </section> --}}
+      
+          <!-- Enrollment Section -->
+          {{-- <section class="bg-indigo-800 text-white py-8">
+              <div class="container mx-auto text-center">
+                  <h2 class="text-3xl font-bold mb-4">Enroll in this Course</h2>
+                  <a href="{{ route('enroll', $course->id) }}" class="bg-white text-indigo-800 font-semibold py-2 px-4 rounded">Enroll Now</a>
+              </div>
+          </section> --}}
+      </main>
+     
+      
+       
+    <!-- jQuery if you need it
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  -->
+    <script>
+      var scrollpos = window.scrollY;
+      var header = document.getElementById("header");
+      var navcontent = document.getElementById("nav-content");
+      var navaction = document.getElementById("navAction");
+      var brandname = document.getElementById("brandname");
+      var toToggle = document.querySelectorAll(".toggleColour");
+
+      document.addEventListener("scroll", function () {
+        /*Apply classes for slide in bar*/
+        scrollpos = window.scrollY;
+
+        if (scrollpos > 10) {
+          header.classList.add("bg-white");
+          navaction.classList.remove("bg-white");
+          navaction.classList.add("gradient");
+          navaction.classList.remove("text-gray-800");
+          navaction.classList.add("text-white");
+          //Use to switch toggleColour colours
+          for (var i = 0; i < toToggle.length; i++) {
+            toToggle[i].classList.add("text-gray-800");
+            toToggle[i].classList.remove("text-white");
+          }
+          header.classList.add("shadow");
+          navcontent.classList.remove("bg-gray-100");
+          navcontent.classList.add("bg-white");
+        } else {
+          header.classList.remove("bg-white");
+          navaction.classList.remove("gradient");
+          navaction.classList.add("bg-white");
+          navaction.classList.remove("text-white");
+          navaction.classList.add("text-gray-800");
+          //Use to switch toggleColour colours
+          for (var i = 0; i < toToggle.length; i++) {
+            toToggle[i].classList.add("text-white");
+            toToggle[i].classList.remove("text-gray-800");
+          }
+
+          header.classList.remove("shadow");
+          navcontent.classList.remove("bg-white");
+          navcontent.classList.add("bg-gray-100");
+        }
+      });
+    
+      /*Toggle dropdown list*/
+      /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
+
+      var navMenuDiv = document.getElementById("nav-content");
+      var navMenu = document.getElementById("nav-toggle");
+
+      document.onclick = check;
+      function check(e) {
+        var target = (e && e.target) || (event && event.srcElement);
+
+        //Nav Menu
+        if (!checkParent(target, navMenuDiv)) {
+          // click NOT on the menu
+          if (checkParent(target, navMenu)) {
+            // click on the link
+            if (navMenuDiv.classList.contains("hidden")) {
+              navMenuDiv.classList.remove("hidden");
+            } else {
+              navMenuDiv.classList.add("hidden");
+            }
+          } else {
+            // click both outside link and outside menu, hide menu
+            navMenuDiv.classList.add("hidden");
+          }
+        }
+      }
+      function checkParent(t, elm) {
+        while (t.parentNode) {
+          if (t == elm) {
+            return true;
+          }
+          t = t.parentNode;
+        }
+        return false;
+      }
+   </script>   
+    
+  </body>
+</html>

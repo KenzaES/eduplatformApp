@@ -1,11 +1,11 @@
 {{-- <x-app-layout>
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> --}}
   <x-app-layout>
-    <x-slot name="header" >
-        {{-- <h2 class="font-semibold text-xl text-gray-800 leading-tight ">
+    {{-- <x-slot name="header" >
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight ">
             {{ __('Dashboard') }}
-        </h2> --}}
-    </x-slot>
+        </h2>
+    </x-slot> --}}
   
     <div class="py-12">
   <section class="custom-gradientReg w-full h-full mx-auto text-center">
@@ -36,6 +36,8 @@
       <div class="sm:flex sm:flex-row shadow-xl">
           <div class="ml-12">
               <img class="w-full min-h-screen md:w-11/12 z-50" src="{{ asset('images/Wall post-amico.svg') }}" >
+              <p class="my-3 font-semibold text-4xl text-white">Welcome Admin! let's add new Members to our journey.</p>
+                
           </div>
           <div class="w-full">
               <x-auth-card>
@@ -123,7 +125,7 @@
                           </div>
                       </div>
 
-                      <div class="flex items-center justify-end mt-4">
+                      <div class="mt-4">
                           
                           <x-button class="ml-4">
                               {{ __('Add User') }}

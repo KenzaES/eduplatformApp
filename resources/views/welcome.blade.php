@@ -15,15 +15,7 @@
     <!--Replace with your tailwind.css once created-->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
-    <style>
-      .gradient {
-        /* background: linear-gradient(90deg, #d53369 0%, #daae51 100%); */
-        background: #7f7fd5; 
-  background: -webkit-linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4); 
-   background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4); 
-      }
-      
-    </style>
+    
     <!-- Scripts -->
     <script src="{{ asset('js/anim.js') }}" defer></script>
   </head>
@@ -139,7 +131,8 @@
               Our Heroes!
           </h2>
           <div class="w-full mt-8 overflow-hidden relative">
-              <x-instructorsPreview />
+            {{-- @include('components.instructorsPreview', ['users' => $users]) --}}
+
       </div>
   </section>
 

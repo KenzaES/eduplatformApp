@@ -69,4 +69,28 @@ class UserRegistrationController extends Controller
         // Redirect to appropriate route or dashboard
         return redirect()->route('admin.dashboard')->with('success', 'User added successfully!');
     }
+
+    public function update(Request $request, User $user)
+    {
+         // Check if the user exists
+    if (!$user) {
+        abort(404, 'User not found'); // Handle the case where the user is not found
+    }
+        // Validate the request data
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            'category' => 'required|string|max:255',
+            'bio' => 'nullable|string',
+        ]);
+    
+        // Update the user with validated data
+        $user->update($validatedData);
+
+        
+        // $user->roles()->sync($request->roles);
+
+        return response()->json(['message' => 'User updated successfully']);
+    }
 }
+
